@@ -4,6 +4,11 @@ import './App.css';
 import {NavBar} from 'react-bootstrap';
 
 class App extends Component {
+
+componentDidMount() {
+  this.props.fetchImages()
+}
+
   render() {
     return (
       <div className="App">
