@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {NavBar} from 'react-bootstrap';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
+
+const Index = () => <h2> Home </h2>
+const About = () => <h2> About </h2>
 
 class App extends Component {
 
@@ -9,9 +12,11 @@ componentDidMount() {
   this.props.fetchImages()
 }
 
+
+
   render() {
     return (
-      <div className="App">
+      /*<div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
@@ -26,7 +31,23 @@ componentDidMount() {
             Learn React
           </a>
         </header>
+      </div>*/
+      <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about/">About</Link>
+            </li>
+          </ul>
+        </nav>
+        <Route path="/" exact component={Index} />
+        <Route path="/about/" component={About} />
       </div>
+    </Router>
     );
   }
 }
