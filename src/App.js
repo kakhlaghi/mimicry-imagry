@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
+import * as actions from './actions/fetchImages'
+
+
 
 const Index = () => <h2> Home </h2>
 const About = () => <h2> About </h2>
