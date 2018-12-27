@@ -1,8 +1,8 @@
-import {combineReducer} from 'redux'
+import {combineReducers} from 'redux'
 import imageReducer from './imageReducer'
 
 
-const rootReducer = combineReducer({
+const rootReducer = combineReducers({
     images: imageReducer
 })
 

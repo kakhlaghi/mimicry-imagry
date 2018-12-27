@@ -1,17 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import {WrapperApp} from './App';
 import * as serviceWorker from './serviceWorker';
 import thunk from 'redux-thunk'
+import {createStore, applyMiddleware} from 'redux'
+import {Provider} from 'react-redux'
+import rootReducer from './reducers/indexReducer'
 
-const store = createStore(combineReducers, applyMiddleware(thunk));
+const store = createStore(rootReducer, applyMiddleware(thunk));
 window.store = store;
 
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        <WrapperApp />
     </Provider>
     , document.getElementById('root')
 );

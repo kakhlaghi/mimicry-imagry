@@ -1,5 +1,4 @@
-import React from 'react'
-
+const url = 'https://imgur.com/gallery'
 export function fetchImages (dispatch) {
     return function(dispatch){
         dispatch({type: 'LOADING_IMAGES'})
@@ -10,3 +9,5 @@ export function fetchImages (dispatch) {
         })
     }
 }
+
+

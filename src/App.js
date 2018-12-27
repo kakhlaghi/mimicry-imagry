@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
-import * as actions from './actions/fetchImages'
+import * as actions from './actions/fetchImages.js'
+import {connect} from 'react-redux'
 
 
 const Index = () => <h2> Home </h2>
@@ -52,4 +53,12 @@ componentDidMount() {
   }
 }
 
-export default App;
+function mapStateToProps (state) {
+
+}
+
+function mapDispatchToProps(dispatch) {
+  return {actions: bindActionCreators(actions, dispatch)}
+}
+
+export const WrapperApp = connect( mapStateToProps, {...actions} )(App)
