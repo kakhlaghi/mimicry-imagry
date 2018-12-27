@@ -4,6 +4,7 @@ import './App.css';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import * as actions from './actions/fetchImages.js'
 import {connect} from 'react-redux'
+import { bindActionCreators } from 'redux'
 
 
 const Index = () => <h2> Home </h2>
