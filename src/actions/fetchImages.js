@@ -1,5 +1,5 @@
 const url = 'https://api.imgur.com/3/gallery/t/'
-const api_key = '8292cf41c20143c'
+const apiKey = '8292cf41c20143c'
 
 /*const auth = 'Client'*/
 export function fetchImages (dispatch) {
