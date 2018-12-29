@@ -38,8 +38,9 @@ componentDidMount() {
   }
 }
 
-function mapStateToProps (state) {
-
+function mapStateToProps(state) {
+  console.log('in map state to props')
+  return {imageList: state.images.pictures}
 }
 
 function mapDispatchToProps(dispatch) {
