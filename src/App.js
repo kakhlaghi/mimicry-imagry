@@ -19,8 +19,8 @@ componentDidMount() {
   render() {
     return (
       <Router>
-      <div>
-        <nav>
+      <div className='App'>
+        <nav className='App-header'>
           <ul>
             <li>
               <Link to="/">Home</Link>

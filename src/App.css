@@ -8,8 +8,8 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #2d2f33;
+  min-height: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,4 +29,16 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.col {
+  flex: 100%;
+  max-width: 100%;
+  padding: 0 4px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
 }
