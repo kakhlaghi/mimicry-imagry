@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Images from './components/Images.js'
 import './App.css';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import * as actions from './actions/fetchImages.js'
@@ -18,7 +18,42 @@ componentDidMount() {
 
   render() {
     return (
-      /*<div className="App">
+      <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about/">About</Link>
+            </li>
+          </ul>
+        </nav>
+        <Route path="/" exact component={Index} />
+        <Route path="/about/" component={About} />
+
+        <Images images={this.props.images} />
+      </div>
+    </Router>
+    );
+  }
+}
+
+function mapStateToProps(state) {
+  console.log('in map state to props')
+  return {images: state.images.pictures}
+}
+
+function mapDispatchToProps(dispatch) {
+  return {actions: bindActionCreators(actions, dispatch)}
+}
+
+export const WrapperApp = connect( mapStateToProps, {...actions} )(App)
+
+
+
+/*<div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
@@ -34,32 +69,3 @@ componentDidMount() {
           </a>
         </header>
       </div>*/
-      <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about/">About</Link>
-            </li>
-          </ul>
-        </nav>
-        <Route path="/" exact component={Index} />
-        <Route path="/about/" component={About} />
-      </div>
-    </Router>
-    );
-  }
-}
-
-function mapStateToProps (state) {
-
-}
-
-function mapDispatchToProps(dispatch) {
-  return {actions: bindActionCreators(actions, dispatch)}
-}
-
-export const WrapperApp = connect( mapStateToProps, {...actions} )(App)
