@@ -5,6 +5,7 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import * as actions from './actions/fetchImages.js'
 import {connect} from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 
 
 const Index = () => <h2> Home </h2>
@@ -20,16 +21,14 @@ componentDidMount() {
     return (
       <Router>
       <div className='App'>
-        <nav className='App-header'>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about/">About</Link>
-            </li>
-          </ul>
-        </nav>
+      <Navbar>
+        <Navbar.Brand>
+          <NavItem eventKey={1}>
+            <Link to="/">Mimcry-Imagry </Link>
+          </NavItem>
+        </Navbar.Brand>
+          <Link to="/about/">About </Link>
+       </Navbar>
         <Route path="/" exact component={Index} />
         <Route path="/about/" component={About} />
 
