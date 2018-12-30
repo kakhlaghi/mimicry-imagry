@@ -31,7 +31,7 @@ componentDidMount() {
        </Navbar>
         <Route path="/" exact component={Index} />
         <Route path="/about/" component={About} />
-
+        
         <Images images={this.props.images} />
       </div>
     </Router>
