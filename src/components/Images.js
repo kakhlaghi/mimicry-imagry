@@ -26,7 +26,7 @@ const Images = (props) => {
   }
 
   return (
-    <div>
+    <div style={{maxheight:800}}>
     {listImages()}
     </div>
     )
