@@ -24,10 +24,10 @@ componentDidMount() {
       <Navbar>
         <Navbar.Brand>
           <NavItem eventKey={1}>
-            <Link to="/">Mimcry-Imagry </Link>
+            <NavLink to="/">Mimcry-Imagry </NavLink>
           </NavItem>
         </Navbar.Brand>
-          <Link to="/about/">About </Link>
+          <NavLink to="/about/">About </NavLink>
        </Navbar>
         <Route path="/" exact component={Index} />
         <Route path="/about/" component={About} />

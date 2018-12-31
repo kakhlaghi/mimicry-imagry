@@ -26,7 +26,7 @@ const Images = (props) => {
   }
 
   return (
-    <div style={{maxheight:800}}>
+    <div style={{alignItems: 'center'}}>
     {listImages()}
     </div>
     )

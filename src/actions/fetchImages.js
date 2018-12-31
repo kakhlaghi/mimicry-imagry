@@ -17,7 +17,3 @@ export function fetchImages (dispatch) {
     }
 }
 
-
-
-
-
