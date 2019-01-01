@@ -3,7 +3,9 @@ import React, {Component} from 'react'
 const ImagesContainer = (props) => {
     
     return(
-        Images
+        <div>
+            Images From the backend
+        </div>
     )
     
 }

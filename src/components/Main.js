@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import SignUp from '../containers/SignUp';
 import SignIn from '../containers/SignIn';
 import SignOut from '../containers/SignOut';
+import ImagesContainer from './ImagesContainer'
 
 const Main = () => (
   <main>

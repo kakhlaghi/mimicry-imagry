@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+
+import ImagesContainer from './components/ImagesContainer.js'
 import Images from './components/Images.js'
+
 import './App.css';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import * as actions from './actions/fetchImages.js'
@@ -24,14 +27,15 @@ componentDidMount() {
       <Navbar>
         <Navbar.Brand>
           <NavItem eventKey={1}>
-            <NavLink to="/">Mimcry-Imagry </NavLink>
+            <Link to="/">Mimcry-Imagry </Link>
           </NavItem>
         </Navbar.Brand>
-          <NavLink to="/about/">About </NavLink>
+          <Link to="/about/">About </Link>
        </Navbar>
         <Route path="/" exact component={Index} />
         <Route path="/about/" component={About} />
         
+        <ImagesContainer />
         <Images images={this.props.images} />
       </div>
     </Router>
