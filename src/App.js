@@ -24,7 +24,7 @@ componentDidMount() {
     return (
       <Router>
       <div className='App'>
-      <Navbar>
+      <Navbar className='App-header'>
         <Navbar.Brand>
           <NavItem eventKey={1}>
             <Link to="/">Mimcry-Imagry </Link>
