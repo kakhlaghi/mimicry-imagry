@@ -5,12 +5,18 @@ import ImagesContainer from './ImagesContainer'
 import Images from './Images'
 import ImageList from '../containers/ImageList';
 
+import { Grid, Row } from 'react-bootstrap';
 
-const Main = () => (
+
+const Main = (props) => (
+
+
   <main>
-    <Switch>
-      <Route exact path='/' component={ImageList} />
-    </Switch>
+    <Grid>
+      <Row>
+        <Images />
+      </Row>
+    </Grid>   
   </main>
 )
 

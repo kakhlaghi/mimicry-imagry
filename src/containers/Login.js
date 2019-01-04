@@ -12,11 +12,12 @@ export default class Login extends Component {
         super(props);
         this.state = {
             name: '',
+            email: '',
             password: ''
         }
     }
 
-    
+
 
     render(){
         return (

@@ -44,11 +44,12 @@ handleOnClick(event){
        </Navbar>
         <Route path="/" exact component={Index} />
         <Route path="/about/" component={About} />
+        <ImagesContainer />
         <Grid>
           <Row>
             <Images images={this.props.images} onClick={this.handleOnClick}/>
           </Row>
-        </Grid>     
+        </Grid> 
      </div>
     </Router>
     );
