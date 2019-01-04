@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import UserImages from './UserImages'
+
 
 class ImagesContainer extends Component {
 
@@ -23,12 +25,7 @@ class ImagesContainer extends Component {
         return (
           <div>
             {this.state.images.map((image) => {
-              return(
-                <div className="tile" key={image.id} >
-                  <h4>{image.imgur_id}</h4>
-                  <p>{image.user_id}</p>=
-                </div>
-              )       
+                return (<UserImages image={image} key={image.id} />)    
             })}
           </div>
         );

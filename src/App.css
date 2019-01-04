@@ -19,6 +19,25 @@
   color: white;
 }
 
+.tile {
+  height: 150px;
+  width: 150px;
+  margin: 10px;
+  background: lightyellow;
+  float: left;
+  font-size: 11px;
+  text-align: left;
+}
+
+.image-box{
+  height: 150px;
+  width: 150px;
+  margin: 10px;
+  float: left;
+  font-size: 11px;
+  text-align: left;
+}
+
 .App-link {
   color: #61dafb;
 }
