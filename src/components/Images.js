@@ -18,7 +18,7 @@ const Images = (props) => {
       return (
         <div key={idx} className="row">
           <div>
-            <img src={image.link} className="thumbnail responsive" style={{height: '220px', width: '221px', margin: 'auto'}} alt={image.title}/>
+            <img src={image.link} className="thumbnail responsive" style={{height: '220px', width: '221px', margin: 'auto'}} alt={image.title} />
           </div>
         </div>
       )
@@ -27,7 +27,7 @@ const Images = (props) => {
 
   return (
     <div style={{alignItems: 'center'}}>
-    {listImages()}
+      {listImages()}
     </div>
     )
 }

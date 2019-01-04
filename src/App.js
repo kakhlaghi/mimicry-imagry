@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { auth } from './utils/init'
 
 import ImagesContainer from './components/ImagesContainer.js'
 import Images from './components/Images.js'
@@ -8,16 +9,23 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import * as actions from './actions/fetchImages.js'
 import {connect} from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Grid, Row } from 'react-bootstrap';
 
 
 const Index = () => <h2> Home </h2>
 const About = () => <h2> About </h2>
 
 class App extends Component {
+  
 
 componentDidMount() {
   this.props.fetchImages()
+}
+
+handleOnClick(event){
+  event.preventDefault()
+  let e = event.target.id
+  console.log(e)
 }
 
   render() {
@@ -31,25 +39,29 @@ componentDidMount() {
           </NavItem>
         </Navbar.Brand>
           <Link to="/about/">About </Link>
+          <Link to="/register/">Register </Link>
+          <Link to="/signin/">Sign In </Link>
        </Navbar>
         <Route path="/" exact component={Index} />
         <Route path="/about/" component={About} />
-        <div className='col'>
-          <ImagesContainer />
-          <Images images={this.props.images} />
-        </div>
-      </div>
+        <Grid>
+          <Row>
+            <Images images={this.props.images} onClick={this.handleOnClick}/>
+          </Row>
+        </Grid>     
+     </div>
     </Router>
     );
   }
 }
 
 function mapStateToProps(state) {
-  console.log('in map state to props')
+  console.log('hit mapstatetoprops')
   return {images: state.images.pictures}
 }
 
 function mapDispatchToProps(dispatch) {
+  console.log('mapdispatch to props')
   return {actions: bindActionCreators(actions, dispatch)}
 }
 

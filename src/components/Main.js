@@ -1,14 +1,15 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import SignUp from '../containers/SignUp';
-import SignIn from '../containers/SignIn';
-import SignOut from '../containers/SignOut';
+
 import ImagesContainer from './ImagesContainer'
+import Images from './Images'
+import ImageList from '../containers/ImageList';
+
 
 const Main = () => (
   <main>
     <Switch>
-      <Route exact path='/' component={Images}/>
+      <Route exact path='/' component={ImageList} />
     </Switch>
   </main>
 )

@@ -1,5 +1,5 @@
 import Auth0Lock from 'auth0-lock'
-import logo from './../../assets/img/logo.svg'
+//import logo from './assets/img/logo.svg'
 export default class AuthService {
   constructor(clientId, domain) {
     // Configure Auth0
@@ -9,7 +9,7 @@ export default class AuthService {
         responseType: 'token'
       },
       theme: {
-        logo: logo,
+        //logo: logo,
         primaryColor: '#7FDBFF'
       },
       languageDictionary: {
@@ -25,7 +25,7 @@ _doAuthentication(authResult) {
     // Saves the user token
     this.setToken(authResult.idToken)
     // navigate to the home route
-    location.replace("/");
+    //location.replace("/");
 }
 login() {
     // Call the show method to display the widget.
@@ -46,6 +46,6 @@ getToken() {
 logout() {
     // Clear user token and profile data from local storage
     localStorage.removeItem('id_token');
-    location.replace("/");
+    //location.replace("/");
   }
 }
