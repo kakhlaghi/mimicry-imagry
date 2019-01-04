@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  align-items: center;
 }
 
 .App-logo {
@@ -32,13 +33,12 @@
 }
 
 .col {
-  flex: 100%;
-  max-width: 100%;
-  padding: 0 4px;
+  flex: 200%;
+  padding: auto;
 }
 
 .row {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: flex;
   padding: 5px;
 }

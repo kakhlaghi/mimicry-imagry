@@ -23,7 +23,7 @@ componentDidMount() {
   render() {
     return (
       <Router>
-      <div className='App'>
+      <div>
       <Navbar className='App-header'>
         <Navbar.Brand>
           <NavItem eventKey={1}>
@@ -34,9 +34,10 @@ componentDidMount() {
        </Navbar>
         <Route path="/" exact component={Index} />
         <Route path="/about/" component={About} />
-        
-        <ImagesContainer />
-        <Images images={this.props.images} />
+        <div className='col'>
+          <ImagesContainer />
+          <Images images={this.props.images} />
+        </div>
       </div>
     </Router>
     );

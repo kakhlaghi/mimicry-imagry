@@ -7,6 +7,7 @@ import thunk from 'redux-thunk'
 import {createStore, applyMiddleware} from 'redux'
 import {Provider} from 'react-redux'
 import rootReducer from './reducers/indexReducer'
+import 'bootstrap/dist/css/bootstrap.css'
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 window.store = store;
