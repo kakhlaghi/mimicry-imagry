@@ -23,7 +23,7 @@
   height: 150px;
   width: 150px;
   margin: 10px;
-  background: lightyellow;
+  background: grey;
   float: left;
   font-size: 11px;
   text-align: left;
@@ -60,4 +60,15 @@
   display: flex;
   flex-wrap: flex;
   padding: 5px;
+}
+
+.newImageButton {
+  background: darkblue;
+  color: white;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding:10px;
 }
