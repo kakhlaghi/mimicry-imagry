@@ -9,7 +9,7 @@ export function fetchImages (dispatch) {
             headers: {
               'Authorization': 'Client-ID ' + apiKey
             }})
-        .then(response => {return response.json()})
+        .then(response => parseJSON)
         .then(responseJSON => {
             dispatch({type: 'FETCH_IMAGES', payload: responseJSON.data.items})
             console.log(responseJSON.data.items)
@@ -17,6 +17,7 @@ export function fetchImages (dispatch) {
     }
 }
 
+//working on search bar...
 export function search(query) {
     return fetch(`/api/image?q=${query}`, {
       accept: 'application/json',
@@ -38,3 +39,4 @@ export function search(query) {
   function parseJSON(response) {
     return response.json();
   }
+  
