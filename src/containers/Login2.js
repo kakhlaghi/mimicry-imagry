@@ -1,4 +1,4 @@
-const Login = () => {
+const Login2 = () => {
     return (
       <div>
         <form>

@@ -14,6 +14,7 @@ import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Grid, Row } from 'react-bo
 
 const Index = () => <h2> Home </h2>
 const About = () => <h2> About </h2>
+const Login = () => <h2> Login </h2>
 
 class App extends Component {
   
@@ -40,7 +41,7 @@ handleOnClick(event){
         </Navbar.Brand>
           <Link to="/about/">About </Link>
           <Link to="/register/">Register </Link>
-          <Link to="/signin/">Sign In </Link>
+          <Link to="/login/">Log In </Link>
        </Navbar>
         <Route path="/" exact component={Index} />
         <Route path="/about/" component={About} />
