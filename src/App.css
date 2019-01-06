@@ -8,6 +8,10 @@
   height: 40vmin;
 }
 
+.hide{
+  display:none;  
+}
+
 .App-header {
   background-color: #2d2f33;
   min-height: 100px;
