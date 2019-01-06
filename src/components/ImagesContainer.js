@@ -10,7 +10,8 @@ class ImagesContainer extends Component {
     constructor(props) {
         super(props)
         this.state = {
-          images: []
+          images: [],
+          editingImageId: null
         }
       }
     
@@ -26,7 +27,7 @@ class ImagesContainer extends Component {
       addNewImage = () => {
         axios.post(
           'http://localhost:3001/api/images',
-          { imgage:
+          { image:
             {
               imgur_id: '',
               user_id: ''
@@ -35,6 +36,14 @@ class ImagesContainer extends Component {
         )
         .then(response => {
           console.log(response)
+          //creates item immediately no refresh needed
+          const images = update(this.state.images, {
+            $splice: [[0,0,response.data]]
+          })
+          this.setState({
+            images:images,
+            editingImageId:response.data.id
+          })
         })
         .catch(error => console.log(error))
       }

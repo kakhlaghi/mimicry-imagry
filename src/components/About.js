@@ -1,5 +1,7 @@
 import React from 'react'
 
-export default class About {
+const About = () => {
 
 }
+
+export default About
