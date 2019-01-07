@@ -24,8 +24,8 @@
 }
 
 .tile {
-  height: 150px;
-  width: 150px;
+  height: auto;
+  width: auto;
   margin: 10px;
   background: grey;
   float: left;
@@ -35,7 +35,7 @@
 
 .image-box{
   height: 150px;
-  width: 150px;
+  width: auto;
   margin: 10px;
   float: left;
   font-size: 11px;
