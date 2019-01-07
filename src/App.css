@@ -27,8 +27,8 @@
   height: 225px;
   width: 225px;
   margin: 10px;
-  background: grey;
   float: left;
+  background: lightgray;
   font-size: 11px;
   text-align: left;  
 }

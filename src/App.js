@@ -4,6 +4,8 @@ import { auth } from './utils/init'
 import ImagesContainer from './components/ImagesContainer.js'
 import Images from './components/Images.js'
 
+import LoginForm from './containers/LoginForm.js'
+
 import './App.css';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import * as actions from './actions/fetchImages.js'
@@ -14,7 +16,14 @@ import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Grid, Row } from 'react-bo
 
 const Index = () => <h2> Home </h2>
 const About = () => <h2> About </h2>
-const Login = () => <h2> Login </h2>
+const Login = () => {
+  return(
+    <div>
+      <h2> Login </h2>
+      <LoginForm />
+    </div> 
+  )
+}
 
 class App extends Component {
   

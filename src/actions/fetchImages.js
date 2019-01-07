@@ -1,4 +1,4 @@
-const url = 'https://api.imgur.com/3/gallery/t/gifs'
+const url = 'https://api.imgur.com/3/gallery/t/all'
 const apiKey = '8292cf41c20143c'
 
 /*const auth = 'Client'*/

@@ -18,6 +18,30 @@ export default class Login extends Component {
     }
 
 
+    login(event) {
+        const name = event.target.name
+        const email = event.target.email
+        const password = event.target.password
+        const request = {"auth": {"name": name, "email": email, "password": password}}
+        console.log(request)
+        return fetch("http://localhost:3001/api/user_token",{
+            method:"POST",
+            mode: "cors",
+            cahce: "no-cache",
+            credentials: "same-origin",
+            headers:{
+                "Content-Type": "application/JSON",
+            },
+            redirect: "follow",
+            referrer: "no-referrer",
+            body: JSON.stringify(request),
+        })
+        .then(response => response.json())
+        .catch(function(error) {
+            console.log('There has been a problem with your fetch operation: ', error.message);
+          });
+      }
+
 
     render(){
         return (
@@ -32,7 +56,13 @@ export default class Login extends Component {
              floatingLabelText="Name"
              onChange = {(event,newValue) => this.setState({name:newValue})}
              />
-           <br/>
+            <br/>
+            <TextField
+                hintText="Enter your Email"
+                floatingLabelText="Email"
+                onChange = {(event,newValue) => this.setState({name:newValue})}
+            />
+            <br/>
              <TextField
                type="password"
                hintText="Enter your Password"
@@ -40,8 +70,8 @@ export default class Login extends Component {
                onChange = {(event,newValue) => this.setState({password:newValue})}
                />
              <br/>
-             <RaisedButton label="Submit" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
-         </div>
+                <button onClick={this.login}> Login</button>      
+            </div>
          </MuiThemeProvider>
             </div>    
         )
