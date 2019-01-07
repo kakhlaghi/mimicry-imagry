@@ -7,7 +7,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 
 
-export default class Login extends Component {
+export default class LoginForm extends Component {
     constructor (props) {
         super(props);
         this.state = {
@@ -41,8 +41,6 @@ export default class Login extends Component {
           });
       }
 
-    
-
     render(){
         return (
          <div>
@@ -54,21 +52,21 @@ export default class Login extends Component {
         <form>
            <input
             type="text"
-             hintText="Enter your Username"
+             placeholder="Enter your Username"
              floatingLabelText="Name"
              onChange = {(event,newValue) => this.setState({name:newValue})}
              />
             <br/>
             <input
             type="email"
-            hintText="Enter your Email"
+            placeholder="Enter your Email"
             floatingLabelText="Email"
             onchange={(event,newValue) => this.setState({email:newValue})} 
             />
            <br/>
              <input
                type="password"
-               hintText="Enter your Password"
+               placeholder="Enter your Password"
                floatingLabelText="Password"
                onChange = {(event,newValue) => this.setState({password:newValue})}
                />

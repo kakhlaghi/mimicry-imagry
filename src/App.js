@@ -16,7 +16,7 @@ import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Grid, Row } from 'react-bo
 
 const Index = () => <h2> Home </h2>
 const About = () => <h2> About </h2>
-const Login = () => <h2> Login </h2>
+
 
 class App extends Component {
   
@@ -47,7 +47,7 @@ handleOnClick(event){
        </Navbar>
         <Route path="/" exact component={Index} />
         <Route path="/about/" component={About} />
-        <Route path="/login/" component={Login} />
+        <Route path="/login/" component={LoginForm} />
         <ImagesContainer />
         <Grid >
           <Row>
