@@ -25,7 +25,7 @@ class ImagesContainer extends Component {
         .catch(error => console.log(error))
       }
 
-      addNewImage = () => {
+    addNewImage = () => {
         axios.post(
           'http://localhost:3001/api/images',
           { image:
@@ -47,8 +47,17 @@ class ImagesContainer extends Component {
             editingImageId:response.data.id
           })
         })
-        .catch(error => console.log(error))
-      }
+      .catch(error => console.log(error))
+    }
+//grabs index of the image being edited in the array, takes the old value and replaces with $set, then set state updates the state
+    updateImage = (image) => {
+      const imageIndex = this.state.images.findIndex(x => x.id === image.id)
+      const images = update(this.state.images, {
+        [imageIndex]: {$set: image}
+      })
+      this.setState({images: images})
+    }
+
 
       //conditional statement for map checks if editingImageId matches image id in map  if so: form renders if not renders userimage
       render() {
@@ -57,7 +66,7 @@ class ImagesContainer extends Component {
             <button className="newImageButton" onClick={this.addNewImage} > New Image </button>
             {this.state.images.map((image) => {
               if(this.state.editingImageId === image.id){
-                return (<UserImageForm image={image} key={image.id} />)
+                return (<UserImageForm image={image} key={image.id} updateImage={this.updateImage} />)
               }
                 return (<UserImages image={image} key={image.id} />)    
             })}
