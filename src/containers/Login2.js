@@ -14,8 +14,8 @@ const Login2 = () => {
             <input type="password" name="password" placeholder="Password" />
             <label htmlFor="password">Password</label>
           </div>
-          <input type="submit" value="Login" />
-        </form>
+          <button onClick={this.login}>Login</button>     
+         </form>
       </div>
     );
   };

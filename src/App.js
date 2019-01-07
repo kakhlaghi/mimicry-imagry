@@ -4,6 +4,8 @@ import { auth } from './utils/init'
 import ImagesContainer from './components/ImagesContainer.js'
 import Images from './components/Images.js'
 
+import LoginForm from './containers/LoginForm.js'
+
 import './App.css';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import * as actions from './actions/fetchImages.js'
@@ -45,6 +47,7 @@ handleOnClick(event){
        </Navbar>
         <Route path="/" exact component={Index} />
         <Route path="/about/" component={About} />
+        <Route path="/login/" component={Login} />
         <ImagesContainer />
         <Grid >
           <Row>
