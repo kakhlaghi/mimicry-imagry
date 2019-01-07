@@ -18,7 +18,7 @@ class UserImageForm extends Component {
     handleBlur=(event)=>{
         const image = {
             imgur_id: this.state.imgur_id,
-            user_id: this.state.user_id
+            user_id: parseInt(this.state.user_id)
           }
 
         axios.put(

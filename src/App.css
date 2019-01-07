@@ -24,13 +24,13 @@
 }
 
 .tile {
-  height: auto;
-  width: auto;
+  height: 225px;
+  width: 225px;
   margin: 10px;
   background: grey;
   float: left;
   font-size: 11px;
-  text-align: left;
+  text-align: left;  
 }
 
 .image-box{
