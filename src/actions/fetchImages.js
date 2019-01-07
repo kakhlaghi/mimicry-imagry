@@ -9,7 +9,7 @@ export function fetchImages (dispatch) {
             headers: {
               'Authorization': 'Client-ID ' + apiKey
             }})
-        .then(response => parseJSON)
+        .then(response => {return response.json()})
         .then(responseJSON => {
             dispatch({type: 'FETCH_IMAGES', payload: responseJSON.data.items})
             console.log(responseJSON.data.items)
