@@ -17,7 +17,7 @@ class ImagesContainer extends Component {
       }
     
     componentDidMount() {
-        axios.get('http://localhost:3001/api/images.json')
+        fetch('http://localhost:3001/api/images.json')
         .then(response => {
           console.log(response)
           this.setState({images: response.data})

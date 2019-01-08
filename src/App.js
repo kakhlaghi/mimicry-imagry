@@ -48,10 +48,9 @@ handleOnClick(event){
         <Route path="/" exact component={Index} />
         <Route path="/about/" component={About} />
         <Route path="/login/" component={LoginForm} />
-        <ImagesContainer />
         <Grid >
           <Row>
-            <Images images={this.props.images} onClick={this.handleOnClick}/>
+            <Images images={this.props.images} />
           </Row>
         </Grid> 
      </div>
