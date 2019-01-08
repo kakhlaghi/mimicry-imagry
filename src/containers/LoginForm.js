@@ -46,9 +46,7 @@ export default class LoginForm extends Component {
          <div>
             <MuiThemeProvider>
          <div>
-          <AppBar
-             title="Login"
-           />
+          
         <form>
            <input
             type="text"
@@ -80,3 +78,8 @@ export default class LoginForm extends Component {
     }
 
 }
+
+
+/* <AppBar
+             title="Login"
+           />*/

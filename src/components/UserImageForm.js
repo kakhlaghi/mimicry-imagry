@@ -15,7 +15,7 @@ class UserImageForm extends Component {
     }
 
     //Using handle blur so when the form loses focus it updates -- this corresponds with the update in the API -- avoids needing a submit button
-    handleBlur=(event)=>{
+    handleSubmit=(event)=>{
         const image = {
             imgur_id: this.state.imgur_id,
             user_id: parseInt(this.state.user_id)
@@ -36,9 +36,10 @@ class UserImageForm extends Component {
     render(){
         return(
             <div className='tile'>
-                <form onBlur={this.handleBlur}>
+                <form>
                     <input className='input' type='text' name='imgur_id' placeholder='add the url for the image here!'/>
                 </form>
+                <button onClick={this.login}>Submit</button>     
             </div>
         )
     }

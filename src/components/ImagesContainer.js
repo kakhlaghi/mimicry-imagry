@@ -49,6 +49,8 @@ class ImagesContainer extends Component {
         })
       .catch(error => console.log(error))
     }
+
+    
 //grabs index of the image being edited in the array, takes the old value and replaces with $set, then set state updates the state
     updateImage = (image) => {
       const imageIndex = this.state.images.findIndex(x => x.id === image.id)
