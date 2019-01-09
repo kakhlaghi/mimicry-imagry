@@ -17,7 +17,12 @@ class ImagesContainer extends Component {
       }
     
     componentDidMount() {
-        fetch('http://localhost:3001/api/images.json')
+        fetch('http://localhost:3001/api/images.json',{
+          method: 'GET',
+          headers: {
+            'Authorization': this.props.token
+          }
+        })
         .then(response => {
           console.log(response)
           this.setState({images: response.data})

@@ -18,10 +18,13 @@ export default class LoginForm extends Component {
     }
 
     login(event) {
+        const token = window.localStorage.getItem('Token')
+        console.log(token)
         const name = event.target.name
         const email = event.target.email
         const password = event.target.password
         const request = {"auth": {"name": name, "email": email, "password": password}}
+        debugger
         console.log(request)
         return fetch("http://localhost:3001/api/user_token",{
             method:"POST",
@@ -29,7 +32,7 @@ export default class LoginForm extends Component {
             cahce: "no-cache",
             credentials: "same-origin",
             headers:{
-                "Content-Type": "application/JSON",
+              'Authorization': token
             },
             redirect: "follow",
             referrer: "no-referrer",
@@ -40,16 +43,16 @@ export default class LoginForm extends Component {
             console.log('There has been a problem with your fetch operation: ', error.message);
           });
       }
-
     render(){
         return (
          <div>
             <MuiThemeProvider>
          <div>
           
-        <form>
+        <form id="loginForm" onSubmit={this.login}>
            <input
             type="text"
+            name="name"
              placeholder="Enter your Username"
              floatingLabelText="Name"
              onChange = {(event,newValue) => this.setState({name:newValue})}
@@ -57,6 +60,7 @@ export default class LoginForm extends Component {
             <br/>
             <input
             type="email"
+            name="email"
             placeholder="Enter your Email"
             floatingLabelText="Email"
             onchange={(event,newValue) => this.setState({email:newValue})} 
@@ -64,13 +68,16 @@ export default class LoginForm extends Component {
            <br/>
              <input
                type="password"
+               name="password"
                placeholder="Enter your Password"
                floatingLabelText="Password"
                onChange = {(event,newValue) => this.setState({password:newValue})}
                />
              <br/>
+             <button type='submit'>Login</button> 
         </form>
-        <button onClick={this.login}>Login</button>     
+        
+
      </div>
          </MuiThemeProvider>
             </div>    
