@@ -1,3 +1,5 @@
+
+
 const url = 'https://api.imgur.com/3/gallery/t/gifs'
 const apiKey = '8292cf41c20143c'
 
@@ -16,7 +18,7 @@ export function fetchImages (dispatch) {
         })
     }
 }
-
+/*
 //working on search bar...
 export function search(query) {
     return fetch(`/api/image?q=${query}`, {
@@ -39,4 +41,4 @@ export function search(query) {
   function parseJSON(response) {
     return response.json();
   }
-  
+  */

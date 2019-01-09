@@ -20,3 +20,4 @@ const userAPI =()=>{
     request 
 }
 
+export default userAPI

@@ -89,3 +89,7 @@
 .input:focus {
   border: solid 1px lightgrey;
 }
+
+.loginForm {
+  float:left
+}

@@ -49,7 +49,7 @@ export default class LoginForm extends Component {
             <MuiThemeProvider>
          <div>
           
-        <form id="loginForm" onSubmit={this.login}>
+        <form className="loginForm" onSubmit={this.login}>
            <input
             type="text"
             name="name"
