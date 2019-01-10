@@ -11,6 +11,7 @@ const Images = (props) => {
     });
   }*/
 
+//            <button onClick={ () => props.saveImage(image.link) }>Save</button>
 
   function listImages() {
     return props.images.map((image, idx) => {
@@ -30,4 +31,7 @@ const Images = (props) => {
     </div>
     )
 }
+
+
+
 export default Images;

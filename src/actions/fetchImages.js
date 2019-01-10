@@ -5,21 +5,18 @@ const apiKey = '8292cf41c20143c'
 
 
 /*const auth = 'Client'*/
-export function fetchImages (dispatch) {
-    return function(dispatch){
-        dispatch({type: 'LOADING_IMAGES'})
-        return fetch(url, {
-            headers: {
-              'Authorization': 'Client-ID ' + apiKey
-            }})
-        .then(response => {return response.json()})
-        .then(responseJSON => {
-            dispatch({type: 'FETCH_IMAGES', payload: responseJSON.data.items})
-            console.log(responseJSON.data.items)
-        })
-    }
-}
 
+export function fetchImgurImages(){
+  //fetches index
+  fetch('http://localhost:3001/api/images', {
+    method: 'GET'
+  })
+  .then(response => {
+    console.log(response)
+    this.setState({Images: response.data})
+  })
+  .catch(error => console.log(error))
+}
 
 export function fetchUserImages (dispatch) {
   let token = window.localStorage.getItem('Token')
@@ -62,3 +59,25 @@ export function search(query) {
   }
   
 
+
+
+  /*
+  
+*/
+
+
+/*
+export function fetchImages (dispatch) {
+    return function(dispatch){
+        dispatch({type: 'LOADING_IMAGES'})
+        return fetch(url, {
+            headers: {
+              'Authorization': 'Client-ID ' + apiKey
+            }})
+        .then(response => {return response.json()})
+        .then(responseJSON => {
+            dispatch({type: 'FETCH_IMAGES', payload: responseJSON.data.items})
+            console.log(responseJSON.data.items)
+        })
+    }
+} */
