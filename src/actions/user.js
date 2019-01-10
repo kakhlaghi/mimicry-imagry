@@ -1,7 +1,13 @@
 import userAPI from './userAPI'
+import React, {Component} from 'react'
 
-export function signUpUser (credentials, redirect) {
-    return function (dispatch){
-        return userAPI.signup(credentials)
-    }
-} 
+const User = () => {
+
+
+
+  signUpUser
+
+}
+
+
+export default User

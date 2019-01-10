@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import fetchUserImages from '../actions/fetchImages'
 import UserImages from './UserImages'
 import UserImageForm from './UserImageForm'
 import update from 'immutability-helper'
@@ -14,21 +15,19 @@ class ImagesContainer extends Component {
           images: [],
           editingImageId: null
         }
+
       }
     
     componentDidMount() {
-        fetch('http://localhost:3001/api/images.json',{
-          method: 'GET',
-          headers: {
-            'Authorization': this.props.token
-          }
-        })
+     
+    }
+       /* axios.get('http://localhost:3001/api/images.json')
         .then(response => {
           console.log(response)
           this.setState({images: response.data})
         })
         .catch(error => console.log(error))
-      }
+      }*/
 
     addNewImage = () => {
         axios.post(

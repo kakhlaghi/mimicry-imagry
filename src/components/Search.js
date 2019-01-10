@@ -1,6 +1,7 @@
 //sort images from imgur?? may use may not
 
 import React, {Component} from 'react'
+import {DropdownButton, MenuItem} from 'react-bootstrap'
 
 
 
@@ -14,7 +15,7 @@ export default class Search extends Component {
         
 
     render()
-    {
+    { return(
         <DropdownButton title="Galleries" id="bg-nested-dropdown" onSelect={ this.handleSelect }>
           <MenuItem eventKey="Viral">Viral</MenuItem>
           <MenuItem eventKey="Cats">Cats</MenuItem>
@@ -32,6 +33,7 @@ export default class Search extends Component {
           <MenuItem eventKey="Current_Events">Current Events</MenuItem>
           <MenuItem eventKey="Funny">Funny</MenuItem>
         </DropdownButton>
+        )
     }
 
 }

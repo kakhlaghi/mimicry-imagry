@@ -1,7 +1,8 @@
-
+import Search from '../components/Search'
 
 const url = 'https://api.imgur.com/3/gallery/t/gifs'
 const apiKey = '8292cf41c20143c'
+
 
 /*const auth = 'Client'*/
 export function fetchImages (dispatch) {
@@ -18,7 +19,25 @@ export function fetchImages (dispatch) {
         })
     }
 }
-/*
+
+
+export function fetchUserImages (dispatch) {
+  let token = window.localStorage.getItem('Token')
+  if(token){
+    fetch('http://localhost:3001/api/images.json',{
+      method: 'GET',
+      headers: {
+        'authorization': 'token'
+      }
+    })
+    .then(response => {
+      console.log(response)
+      this.setState({images: response.data})
+    })
+    .catch(error => console.log(error))
+  }
+}
+
 //working on search bar...
 export function search(query) {
     return fetch(`/api/image?q=${query}`, {
@@ -41,4 +60,5 @@ export function search(query) {
   function parseJSON(response) {
     return response.json();
   }
-  */
+  
+

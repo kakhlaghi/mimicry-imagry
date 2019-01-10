@@ -1,13 +1,10 @@
 import React, {Component} from 'react'
-import { format } from 'url';
-/*UI from material-ui*/
+import LoginForm from './LoginForm'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import AppBar from 'material-ui/AppBar';
-import RaisedButton from 'material-ui/RaisedButton';
-import TextField from 'material-ui/TextField';
 
 
-export default class LoginForm extends Component {
+
+export default class Register extends Component {
     constructor (props) {
         super(props);
         this.state = {
@@ -17,22 +14,15 @@ export default class LoginForm extends Component {
         }
     }
 
-    login(event) {
-        const token = window.localStorage.getItem('Token')
-        console.log(token)
+    signup(event) {
         const name = event.target.name.value
         const email = event.target.email.value
         const password = event.target.password.value
         const request = {"auth": {"name": name, "email": email, "password": password}}
         console.log(request)
-        return fetch("http://localhost:3001/api/login",{
+        return fetch("http://localhost:3001/api/signup",{
             method:"POST",
             mode: "cors",
-            cahce: "no-cache",
-            credentials: "same-origin",
-            headers:{
-              'Authorization': token
-            },
             redirect: "localhost:3000/",
             referrer: "no-referrer",
             body: JSON.stringify(request),
@@ -42,14 +32,15 @@ export default class LoginForm extends Component {
             console.log('There has been a problem with your fetch operation: ', error.message);
           });
       }
-    render(){
+
+      render(){
         return (
          <div>
             <MuiThemeProvider>
-            <h2> Login </h2>
+            <h2> Register </h2>
          <div>
           
-        <form className="loginForm" onSubmit={this.login}>
+        <form className="loginForm" onSubmit={this.signup}>
            <input
             type="text"
             name="name"
@@ -74,17 +65,11 @@ export default class LoginForm extends Component {
                onChange = {(event,newValue) => this.setState({password:newValue})}
                />
              <br/>
-             <button type='submit'>Login</button> 
+             <button type='submit'>Register</button> 
         </form>
      </div>
          </MuiThemeProvider>
-            </div>    
+</div>    
         )
     }
-
-}
-
-
-/* <AppBar
-             title="Login"
-           />*/
+} 

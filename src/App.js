@@ -5,6 +5,7 @@ import ImagesContainer from './components/ImagesContainer.js'
 import Images from './components/Images.js'
 
 import LoginForm from './containers/LoginForm.js'
+import Register from './containers/Register.js'
 import About from './components/About'
 
 import './App.css';
@@ -16,8 +17,6 @@ import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Grid, Row } from 'react-bo
 
 
 const Index = () => <h2> Home </h2>
-const Register = () => <h2> Register </h2>
-
 
 class App extends Component {
     constructor(){
@@ -31,6 +30,7 @@ class App extends Component {
 
 componentDidMount() {
   this.props.fetchImages()
+  
 }
 
 handleOnClick(event){
@@ -57,11 +57,14 @@ handleOnClick(event){
         <Route path="/about/" component={About} />
         <Route path="/register/" component={Register} />
         <Route path="/login/" component={LoginForm} />
+
+        <ImagesContainer />
         <Grid >
           <Row>
-            <Images images={this.props.images} />
+           <Images images={this.props.images} />
           </Row>
-        </Grid> 
+        </Grid>
+        
      </div>
     </Router>
     );

@@ -13,7 +13,6 @@ const Images = (props) => {
 
 
   function listImages() {
-
     return props.images.map((image, idx) => {
       return (
         <div key={idx} className="tile">
